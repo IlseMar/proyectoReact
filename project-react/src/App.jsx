@@ -1,33 +1,36 @@
 import { useState } from "react";
+import yoMera from "./assets/yo mera.jpeg";
+import "./App.css";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
-import "./App.css";
 
+// Componente (siempre inicia con mayúsculass)
 function App() {
   const [count, setCount] = useState(0);
+  const buttonStyle = {
+    padding: 10,
+    border: "1px solid white",
+    borderRadius: 40,
+    backgroundColor: "green",
+  };
+  const handleClick = () => {
+    console.log("se hizo click en botón");
+  };
 
+  // Todo lo del return es JSX
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <h1 className="" style={{ color: "blueviolet", marginTop: 40 }}>
+        Hola, bienvenidx a la clase 3
+      </h1>
+      <button style={buttonStyle} onClick={handleClick}>
+        Press me
+      </button>
+      <img src={yoMera} style={{ with: 400, height: 400 }} alt="foto" />
+      <hr />
+      <div className="container">
+        <span style={{ color: "violet" }}>Así va la cosa</span>
       </div>
-      <h1>Hola Ilse Mar</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   );
 }
