@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import "../styles/navbar.scss";
 import CartWidget from "./CartWidget";
 
@@ -9,16 +10,28 @@ const NavBar = () => {
       <nav className="elementos-nav">
         <ul>
           <li>
-            <a href="#">INICIO</a>
+            <NavLink
+              className={({ isActive }) => {
+                return isActive ? styles.isActive : styles.notActive;
+              }}
+              to={"/"}
+            >
+              Inicio
+            </NavLink>
           </li>
           <li>
-            <a href="./pages/chromatica.html">CHORMATICA</a>
+            className=
+            {({ isActive }) => {
+              return isActive ? styles.isActive : styles.notActive;
+            }}
+            to={"/category/fundas"}
           </li>
           <li>
-            <a href="./pages/fundas.html">FUNDAS</a>
-          </li>
-          <li>
-            <a href="./pages/espejos.html">ESPEJOS</a>
+            className=
+            {({ isActive }) => {
+              return isActive ? styles.isActive : styles.notActive;
+            }}
+            to={"/category/espejos"}
           </li>
           <CartWidget />
         </ul>
