@@ -3,30 +3,50 @@ import React, { useEffect, useState } from "react";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
 
-//Logica (que va por fuera del return) para traer los productos. Promise, setTimeOut, etc.
-
-//falta generar la promise o el retraso de 2 seg
-
 const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-  //{categoryId: "electronics"}
   const { categoryId } = useParams();
 
   useEffect(() => {
-    let productsFiltered;
-    if (categoryId) {
-      productsFiltered = mockProducts.filter(
-        (product) => product.category === categoryId
-      );
-    } else {
-      productsFiltered = mockProducts;
-    }
-    setProducts(productsFiltered);
+    const promise1 = new Promise((res, rej) => {
+      setTimeout(() => {
+        res(mockProducts);
+      }, 2000);
+    });
+
+    try {
+      const getProducts = async () => {
+        setLoading(true);
+        const products = await promise1;
+        let productsFiltered;
+        if (categoryId) {
+          productsFiltered = products.filter(
+            (product) => product.category === categoryId
+          );
+        } else {
+          productsFiltered = products;
+        }
+        setProducts(productsFiltered);
+        setLoading(false);
+      };
+
+      getProducts();
+    } catch (error) {}
   }, [categoryId]);
+
+  useEffect(() => {
+    console.log("Este side effect se ejecuta en el montaje del componente");
+
+    return () => {
+      console.log("Aca se va a desmontar el componente!");
+    };
+  }, []);
+
   console.log(products);
 
-  return <ItemList products={products} />;
+  return loading ? <h1>Loading.. </h1> : <ItemList products={products} />;
 };
 
 export default ItemListContainer;

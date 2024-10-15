@@ -1,50 +1,56 @@
 [
   {
     "id": 1,
-    "title": "Fundas, diseños básicos",
-    "basePrice": 100,
+    "title": "Fundas",
+    "basePrice": "$350",
     "category": "fundas",
-    "description": "Fundas para celular con diseños personalizados sencillos, con pocos detalles",
-    "pictureUrl": "http://127.0.0.1:5502/assets/img/fundas/chromatica-funda-basica.png"
+    "description": "Diseños básicos",
+    "description2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti cumque repellat praesentium provident expedita temporibus! Ut at corrupti ullam neque modi ipsa. Odio ea totam nulla repellat magnam voluptate veritatis cumque fuga ipsum dolorem assumenda repellendus, tenetur quo, iure alias recusandae cum natus! Commodi ipsum eveniet error quod vitae tenetur..",
+    "pictureUrl": "https://proyecto-final-mar.vercel.app/assets/img/fundas/chromatica-funda-basica.png"
   },
   {
     "id": 2,
-    "title": "Fundas, diseños intermedios",
-    "basePrice": 200,
+    "title": "Fundas",
+    "basePrice": "$400",
     "category": "fundas",
-    "description": "Fundas para celular con diseños personalizados, con detalles intermedios",
-    "pictureUrl": "http://127.0.0.1:5502/assets/img/fundas/chromatica-funda-inter.jpeg"
+    "description": "Diseños intermedios",
+    "description2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti cumque repellat praesentium provident expedita temporibus! Ut at corrupti ullam neque modi ipsa. Odio ea totam nulla repellat magnam voluptate veritatis cumque fuga ipsum dolorem assumenda repellendus, tenetur quo, iure alias recusandae cum natus! Commodi ipsum eveniet error quod vitae tenetur..",
+    "pictureUrl": "https://proyecto-final-mar.vercel.app/assets/img/fundas/chromatica-funda-inter.jpeg"
   },
   {
     "id": 3,
-    "title": "Fundas, super diseños",
-    "basePrice": 300,
+    "title": "Fundas",
+    "basePrice": "$450",
     "category": "fundas",
-    "description": "Fundas para celular con diseños personalizados más complejos, con más detalles",
-    "pictureUrl": "http://127.0.0.1:5502/assets/img/fundas/chromatica-funda-super.jpeg"
+    "description": "Super diseños",
+    "description2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti cumque repellat praesentium provident expedita temporibus! Ut at corrupti ullam neque modi ipsa. Odio ea totam nulla repellat magnam voluptate veritatis cumque fuga ipsum dolorem assumenda repellendus, tenetur quo, iure alias recusandae cum natus! Commodi ipsum eveniet error quod vitae tenetur..",
+    "pictureUrl": "https://proyecto-final-mar.vercel.app/assets/img/fundas/chromatica-funda-super.jpeg"
   },
   {
     "id": 4,
-    "title": "Espejos, diseños básicos",
-    "basePrice": 100,
+    "title": "Espejos",
+    "basePrice": "$350",
     "category": "espejos",
-    "description": "Espejos con diseños personalizados sencillos, con pocos detalles",
-    "pictureUrl": "http://127.0.0.1:5502/assets/img/espejos/chromatica-espejo-basico.jpeg"
+    "description": "Diseños básicos",
+    "description2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti cumque repellat praesentium provident expedita temporibus! Ut at corrupti ullam neque modi ipsa. Odio ea totam nulla repellat magnam voluptate veritatis cumque fuga ipsum dolorem assumenda repellendus, tenetur quo, iure alias recusandae cum natus! Commodi ipsum eveniet error quod vitae tenetur..",
+    "pictureUrl": "https://proyecto-final-mar.vercel.app/assets/img/espejos/chromatica-espejo-basico.jpeg"
   },
   {
     "id": 5,
-    "title": "Espejos, diseños intermedios",
-    "basePrice": 200,
+    "title": "Espejos",
+    "basePrice": "$400",
     "category": "espejos",
-    "description": "Espejos con diseños personalizados, con detalles intermedios",
-    "pictureUrl": "http://127.0.0.1:5502/assets/img/espejos/chromatica-espejo-inter.jpeg"
+    "description": "Diseños intermedios",
+    "description2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti cumque repellat praesentium provident expedita temporibus! Ut at corrupti ullam neque modi ipsa. Odio ea totam nulla repellat magnam voluptate veritatis cumque fuga ipsum dolorem assumenda repellendus, tenetur quo, iure alias recusandae cum natus! Commodi ipsum eveniet error quod vitae tenetur..",
+    "pictureUrl": "https://proyecto-final-mar.vercel.app/assets/img/espejos/chromatica-espejo-inter.jpeg"
   },
   {
     "id": 6,
-    "title": "Espejos, super diseños",
-    "basePrice": 300,
+    "title": "Espejos",
+    "basePrice": "$450",
     "category": "espejos",
-    "description": "Espejos con diseños personalizados más complejos, con más detalles",
-    "pictureUrl": "http://127.0.0.1:5502/assets/img/espejos/chromatica-espejo-super.jpeg"
+    "description": "Super diseños",
+    "description2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti cumque repellat praesentium provident expedita temporibus! Ut at corrupti ullam neque modi ipsa. Odio ea totam nulla repellat magnam voluptate veritatis cumque fuga ipsum dolorem assumenda repellendus, tenetur quo, iure alias recusandae cum natus! Commodi ipsum eveniet error quod vitae tenetur..",
+    "pictureUrl": "https://proyecto-final-mar.vercel.app/assets/img/espejos/chromatica-espejo-super.jpeg"
   }
 ]

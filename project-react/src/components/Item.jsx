@@ -13,13 +13,15 @@ import { NavLink } from "react-router-dom";
 
 const Item = ({ item }) => {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} alt={item.title}>
       <img src={item.pictureUrl} />
       <h2>{item.title}</h2>
-      <span>{item.description}</span>
+      <span className={styles.productInfo}>{item.description}</span>
       <span>{item.basePrice}</span>
       <NavLink to={`/detail/${item.id}`}>
-        <button>Detail</button>
+        <button className={styles.btnDetail}>
+          <span className={styles.textDetail}>Detalles</span>
+        </button>
       </NavLink>
     </div>
   );

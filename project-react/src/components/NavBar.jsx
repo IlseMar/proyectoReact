@@ -1,42 +1,45 @@
 import { NavLink } from "react-router-dom";
-import "../styles/navbar.scss";
+import styles from "../styles/navbar.module.scss";
 import CartWidget from "./CartWidget";
 
 const NavBar = () => {
   return (
-    <div>
-      <h1 className="titulo-nav">CHORMATICA</h1>
-
-      <nav className="elementos-nav">
-        <ul>
-          <li>
-            <NavLink
-              className={({ isActive }) => {
-                return isActive ? styles.isActive : styles.notActive;
-              }}
-              to={"/"}
-            >
-              Inicio
-            </NavLink>
-          </li>
-          <li>
-            className=
-            {({ isActive }) => {
+    <nav className={styles.elementosNav}>
+      <h1 className={styles.tituloNav}>CHORMATICA</h1>
+      <ul className={styles.list}>
+        <li>
+          <NavLink
+            className={({ isActive }) => {
+              return isActive ? styles.isActive : styles.notActive;
+            }}
+            to={"/"}
+          >
+            INICIO
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            className={({ isActive }) => {
               return isActive ? styles.isActive : styles.notActive;
             }}
             to={"/category/fundas"}
-          </li>
-          <li>
-            className=
-            {({ isActive }) => {
+          >
+            FUNDAS
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            className={({ isActive }) => {
               return isActive ? styles.isActive : styles.notActive;
             }}
             to={"/category/espejos"}
-          </li>
-          <CartWidget />
-        </ul>
-      </nav>
-    </div>
+          >
+            ESPEJOS
+          </NavLink>
+        </li>
+        <CartWidget />
+      </ul>
+    </nav>
   );
 };
 

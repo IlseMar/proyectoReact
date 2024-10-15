@@ -1,9 +1,10 @@
 import cart from "../assets/cart.svg";
+import styles from "../styles/navbar.module.scss";
 
 const CartWidget = () => {
   return (
     <>
-      <img className="cart" src={cart} alt="cart" />
+      <img className={styles.cart} src={cart} alt="cart" />
       <span>(3)</span>
     </>
   );
