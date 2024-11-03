@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  max-height: 100vh;
+  overflow-y: scroll;
+  padding: 20px;
+  box-sizing: border-box;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.message {
+  margin-top: 20px;
+  font-size: 1.1em;
+  color: green; // Para éxito, cambia a rojo si es error
+}

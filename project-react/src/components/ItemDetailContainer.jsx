@@ -1,22 +1,27 @@
 import React, { useEffect, useState } from "react";
-import products from "../assets/mokckData.json";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../firebase/config";
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState(null);
-
   const { id } = useParams();
 
-  console.log(products);
-  console.log(id);
-
   useEffect(() => {
-    const product = products.find(
-      (productToFind) => productToFind.id === Number(id)
-    );
-    console.log(product);
-    setProduct(product);
+    (async () => {
+      try {
+        const docRef = doc(db, "products", id);
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+          console.log("Document data:", docSnap.data());
+          setProduct({ ...docSnap.data(), id });
+        } else {
+          console.log("No such document!");
+        }
+      } catch (error) {}
+    })();
   }, [id]);
 
   return product && <ItemDetail product={product} />;
