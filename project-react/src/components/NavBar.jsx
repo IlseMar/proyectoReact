@@ -1,9 +1,7 @@
 import React, { useContext, useState } from "react";
 import styles from "../styles/navbar.module.scss";
 import { NavLink } from "react-router-dom";
-import Switch from "./Switch";
 import { Theme } from "../context/ThemeProvider";
-import CartWidget from "./CartWidget";
 
 const NavBar = () => {
   const { dark, setDark } = useContext(Theme);
@@ -14,7 +12,9 @@ const NavBar = () => {
         dark ? styles["elementosNav-dark"] : ""
       }`}
     >
-      <h1 className={styles.tituloNav}>CHORMATICA</h1>
+      <NavLink className={styles.tituloLink} to={"/"}>
+        <h1 className={styles.tituloNav}>CHORMATICA</h1>
+      </NavLink>
       <ul className={styles.list}>
         <li>
           <NavLink
@@ -53,9 +53,17 @@ const NavBar = () => {
           </NavLink>
         </li>
         <li>
-          <Switch checked={dark} setChecked={setDark} />
+          <NavLink
+            className={({ isActive }) => {
+              return isActive
+                ? styles.isActive
+                : `${styles.notActive} ${dark ? styles["notActive-dark"] : ""}`;
+            }}
+            to={"/about"}
+          >
+            ACERCA DE
+          </NavLink>
         </li>
-        <CartWidget />
       </ul>
     </nav>
   );

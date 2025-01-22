@@ -27,8 +27,11 @@ const CartProvider = ({ children }) => {
         return cartProduct;
       });
     } else {
-      const unitPrice = parseFloat(product.precio) || 0;
-      cartUpdated.push({ ...product, unidades: productQuantity });
+      cartUpdated.push({
+        ...product,
+        unidades: productQuantity,
+        precioUnitario: product.precioUnitario,
+      });
     }
 
     setCart(cartUpdated);
@@ -44,7 +47,7 @@ const CartProvider = ({ children }) => {
   };
 
   const clearCart = () => {
-    setCart([]); // Vacía el carrito
+    setCart([]);
     localStorage.removeItem("cart");
   };
 
@@ -64,7 +67,7 @@ const CartProvider = ({ children }) => {
   );
 
   const totalPrice = cart.reduce(
-    (acc, product) => acc + product.costoTotal * product.unidades,
+    (acc, product) => acc + product.precioUnitario * product.unidades,
     0
   );
 
@@ -80,8 +83,8 @@ const CartProvider = ({ children }) => {
           category: product.category || "Sin categoría",
         });
       }
-      console.log("Carrito guardado en Firestore exitosamente.");
-      clearCart(); // Opcional: limpiar el carrito después de guardar
+      // console.log("Carrito guardado en Firestore exitosamente.");
+      clearCart();
     } catch (error) {
       console.log("Error al guardar el carrito en Firestore: ", error);
     }

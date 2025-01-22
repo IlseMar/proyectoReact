@@ -1,26 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../styles/item.module.scss";
 import { NavLink } from "react-router-dom";
 
-/*{
-  "id": 1,
-  "title": "Fundas, diseños básicos",
-  "basePrice": 100,
-  "category": "fundas",
-  "description": "Fundas para celular con diseños personalizados sencillos, con pocos detalles",
-  "pictureUrl": "http://127.0.0.1:5502/assets/img/fundas/chromatica-funda-basica.png"
-}*/
-
 const Item = ({ item }) => {
+  const [coords, setCoords] = useState({ x: 0, y: 0 });
+
+  const handleMove = (e) => {
+    const button = e.currentTarget;
+    const x = -50 + (e.pageX - button.offsetLeft - 300 / 2) / 3;
+    const y = -10 + (e.pageY - button.offsetTop - 100 / 2) / 3;
+    setCoords({ x, y });
+  };
+
   return (
     <div className={styles.container} alt={item.title}>
-      <img src={item.pictureUrl} />
-      <h2>{item.title}</h2>
+      <img src={item.pictureUrl} alt={item.title} />
+      <h2 className={styles.title}>{item.title}</h2>
       <span className={styles.productInfo}>{item.description}</span>
-      <span>{item.basePrice}</span>
       <NavLink to={`/detail/${item.id}`}>
-        <button className={styles.btnDetail}>
-          <span className={styles.textDetail}>Detalles</span>
+        <button
+          className={styles.button}
+          onMouseMove={handleMove}
+          onTouchMove={(e) => handleMove(e.changedTouches[0])}
+        >
+          <div className={styles.pattern}>
+            <div
+              className={`${styles.target} ${styles.inner} ${styles.bg4}`}
+              style={{
+                "--x": `${coords.x}px`,
+                "--y": `${coords.y}px`,
+              }}
+            ></div>
+          </div>
+          <div className={styles.text}>Detalles</div>
         </button>
       </NavLink>
     </div>

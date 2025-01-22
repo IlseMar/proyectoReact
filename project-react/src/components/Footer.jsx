@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../styles/footer.module.scss";
 import logoInsta from "../assets/img/logos/Instagram.png";
 import logoFace from "../assets/img/logos/Facebook.png";
@@ -6,10 +6,31 @@ import logoTik from "../assets/img/logos/TikTok.png";
 import { NavLink } from "react-router-dom";
 
 const Footer = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.innerHeight + window.scrollY;
+      const pageHeight = document.documentElement.scrollHeight;
+
+      if (scrollPosition >= pageHeight) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <footer className={styles.container}>
+    <footer
+      className={`${styles.container} ${isVisible ? styles.visible : ""}`}
+    >
       <NavLink
-        // style="text-decoration: none"
         className={styles.logos}
         to="https://www.instagram.com/chromati.ca/"
         target="_blank"
@@ -17,7 +38,6 @@ const Footer = () => {
         <img src={logoInsta} alt="Instagram" />
       </NavLink>
       <NavLink
-        // style="text-decoration: none"
         className={styles.logos}
         to="https://www.facebook.com/profile.php?id=100076318662834&mibextid=ZbWKwL"
         target="_blank"

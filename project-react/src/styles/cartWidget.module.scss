@@ -1,0 +1,56 @@
+.cartLink {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 50px;
+  text-decoration: none;
+  z-index: 1000;
+  transition: transform 0.2s ease;
+
+  .cart {
+    width: 55px;
+    margin-right: 5px;
+    position: relative;
+    animation: mover 3s linear infinite both;
+  }
+
+  @keyframes mover {
+    from {
+      transform: translateX(-150px);
+    }
+    to {
+      transform: translateX(30px);
+    }
+  }
+
+  span {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #39afea;
+    color: #fff;
+    border-radius: 50%;
+    padding: 2px 5px;
+    font-size: 12px;
+    font-weight: bold;
+    min-width: 18px;
+    text-align: center;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &:hover .cart {
+    transform: scale(1.2);
+    animation-play-state: paused;
+  }
+
+  &:hover span {
+    color: #ffffff;
+    background-color: #c56fe8;
+  }
+}
